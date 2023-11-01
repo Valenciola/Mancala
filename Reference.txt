@@ -1,0 +1,56 @@
+I have a lot of ideas.
+
+Rules:
+- There are six holes on each side of the board, and two long holes (called banks) on either side of the board.
+- Each hole begins with four stones inside. Seeing as there's twelve holes, that means that there is a total of 72 stones on the board at all times.
+- The stones move counter-clockwise around the board.
+- On each side, the bank on the right belongs to the player on that side.
+- When you play, you pick one hole to pick up stones from. Going to the right, put one seed in each hole (including your bank, but not the other player's bank)
+- If you land in an empty hole on your side, you take the stone in that hole and the stones on the other side of the hole and put it in your bank
+- If you land in your bank, you can take another turn.
+- If you land in a hole that was empty, your turn is over.
+- In the end, whoever has the most stones in the bank wins.
+- (I've played a different version of this game where you keep picking up the stones until you land in an empty hole; that is, you would pick up the stones from the pile you land in).
+
+For the CPU:
+- The best move would be the move that results in the most stones being added to the bank. This includes extra turns.
+- Each time, the best move should be decided, considering each of the six holes in the board.
+- An idea could be that depending on difficulty, the CPU can decide to play the best move or to play a random move. The difficulty level would affect the probability.
+- Probability of choosing the best move becomes greater with greater difficulty (but there is still a chance for the genius CPU to slip up and give the player a fighting chance).
+- A pseudorandom number generator is probably gonna come in handy here.
+- Thanks Eoghan :D
+
+Storing the Board:
+- It might be a better idea to keep track of each of the cells by using an array. This game will mostly rely on increments, so the math will be simple.
+- The program will constantly be incrementing and emptying the cells.
+- It's important for the program to have a stone count of 72 at all times. It should abort if this isn't true at all (like a failsafe; maybe I'll make it a class called SirSafety...).
+- Let's use an array for the cells, and separate variables for the banks.
+
+Swapping Stones:
+- It's important for the program to ignore the opposing player's bank (otherwise the game won't work properly).
+- For the hole that is picked, the value of stones in it should become zero. Every cell after it will become its value plus one.
+- A for loop might be best for this. The counter should equal the value of the hole that was selected, and then the index of the array should cycle through that (0-11 for the 12 cells).
+- We can add to the bank depending on whether we reach index 0 or index 12. This should decrease the counter. An if encapsulation bracket should do the trick...
+
+UI/UX:
+- This is a terminal game, so we're not gonna go all out with the crazy animations and stuff. Let's not go wild just yet.
+- I might be able to make the board look like a table filled with numbers, using '-' and '|' for bordering, and also the width function if I can figure it out (because it was super weird last time...).
+- Maybe we can enter player names? Just for the fun of it?
+- Possibly can log wins and losses but I might make this an option that can be toggled on and off.
+- Send congratulatory messages for wins and encouraging messages for losses.
+- I could also have an option where the program will find the best move for the player (going off of the CPU code), and also the second best move.
+	- Then, there can be props for choosing the best mode and teasing "so close!" for the second best move (and nothing for anything else).
+- Of course, user interface needs a menu and user input.
+
+Classes and Functions:
+- Like I said, a failsafe built into the program in the form of class SirSafety.
+	- It'll make sure we don't lose any stones and it'll check if the game should still be in progress or not.
+- Perhaps a class for the CPU? At least a function for it to determine the best move... and then one for actually doing the move... yep, definitely a class.
+
+Variables
+- For the number of stones in each bank
+- An array for the cells
+- For the number of wins and losses
+- For the code of the best move (which could basically just be the cell number)
+- For whether the game is set on cpu or two-player mode
+- For user input
