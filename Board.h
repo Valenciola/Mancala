@@ -7,6 +7,8 @@
 
 class Board {
 	public:
+		Board();
+		Board(int stonecount, int onebank, int twobank);
 		int StartGame(int mode); //Function to start the game
 		int Failsafe(int inprogress, int board[], int p1bank, int p2bank); //Checks if game is okay by running failsafes
 		void TakeTurn(int player, int board[]); //Iterates through a turn
