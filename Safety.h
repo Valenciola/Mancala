@@ -3,13 +3,14 @@
 
 //Preprocessor Directives
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
 //Hopefully as I keep going this thing will write itself
 
 class SirSafety {
 	public:
-		bool NumStones(int board[]); //Checks that there are 48 stones in the game AT ALL TIMES
+		bool NumStones(int board[], int stonecount); //Checks that there are 48 stones in the game AT ALL TIMES
 		bool LegalMove(int cell, int player); //Checks that an illegal move does not get run
 	private:
 };
