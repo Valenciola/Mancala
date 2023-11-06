@@ -20,9 +20,20 @@ Board::Board() {
 	return;
 }
 Board::Board(int stonecount, int onebank, int twobank) {
+	int distribute;
+	if (stonecount % 12 != 0) {
+		cout << "Invalid stone count. Aborting program...";
+		exit(1);
+	}
+	else {
+		distribute = stonecount / 12;
+	}
 	stones = stonecount;
 	bank1 = onebank;
 	bank2 = twobank;
+	for (int i = 0; i < 12; i++) {
+		cells[i] = distribute;
+	}
 	return;
 }
 int Board::StartGame(int mode) {
