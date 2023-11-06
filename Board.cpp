@@ -11,10 +11,19 @@ using namespace std;
 //Write Board Class Functions
 
 Board::Board() {
-
+	stones = 48;
+	bank1 = 0;
+	bank2 = 0;
+	for (int i = 0; i < 12; i++) {
+		cells[i] = 4;
+	}
+	return;
 }
-Board::Board(int stones) {
-
+Board::Board(int stonecount, int onebank, int twobank) {
+	stones = stonecount;
+	bank1 = onebank;
+	bank2 = twobank;
+	return;
 }
 int Board::StartGame(int mode) {
 	//Function to start the game
