@@ -14,4 +14,5 @@ class Board {
 	private:
 		int cells[12];
 		int bank1, bank2;
+		int stones;
 };
