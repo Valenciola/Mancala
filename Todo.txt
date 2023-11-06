@@ -7,3 +7,5 @@ Issues to fix:
 
 Next steps:
 - Do what I figured out to do
+
+Why do I feel like I do and don't know what I'm doing
