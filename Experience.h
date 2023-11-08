@@ -10,6 +10,7 @@ using namespace std;
 #include "Experience.h"
 
 //Write menu functions
+/*
 void Experience::DisplayTable(int fills[], int firstbank, int secondbank) {
 	//Displays the board
 	cout << "Player 1's bank contains " << firstbank << "stone(s)." << endl;
@@ -19,6 +20,7 @@ void Experience::DisplayTable(int fills[], int firstbank, int secondbank) {
 	}
 	return;
 }
+*/
 void Experience::OperateMenu() {
 	//Displays the starting menu
 	return;
