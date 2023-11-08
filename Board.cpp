@@ -36,6 +36,8 @@ Board::Board(int stonecount, int onebank, int twobank) {
 	}
 	return;
 }
+
+/*
 int Board::StartGame(int mode) {
 	//Function to start the game
 }
@@ -48,6 +50,8 @@ void Board::TakeTurn(int player, int board[]) {
 int Board::DecideWinner() {
 	//Decides on a winner and works in StartGame to check if the game is over
 }
+*/
+
 void Board::DisplayTable(int fills[], int firstbank, int secondbank) {
 	//Displays the board
 	cout << "Player 1's bank contains " << firstbank << "stone(s)." << endl;
