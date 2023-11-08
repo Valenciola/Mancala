@@ -7,8 +7,10 @@ using namespace std;
 //Headers
 #include "Board.h"
 #include "Safety.h"
+#include "Experience.h"
 
 int main() {
-	cout << "Git is Hard";
+	Board mancala;
+	mancala.DisplayTable();
 	return 0;
 }
