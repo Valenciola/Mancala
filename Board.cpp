@@ -54,10 +54,10 @@ int Board::DecideWinner() {
 
 void Board::DisplayTable() {
 	//Displays the board
-	cout << "Player 1's bank contains " << bank1 << "stone(s)." << endl;
-	cout << "Player 2's bank contains " << bank2 << "stone(s)." << endl;
+	cout << "Player 1's bank contains " << bank1 << " stone(s)." << endl;
+	cout << "Player 2's bank contains " << bank2 << " stone(s)." << endl;
 	for (int i = 0; i < 12; i++) {
-		cout << "Hole " << i << " has " << cells[i] << " stones(s) in it." << endl;
+		cout << "Hole " << i + 1 << " has " << cells[i] << " stones(s) in it." << endl;
 	}
 	return;
 }
