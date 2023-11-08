@@ -1,11 +1,11 @@
 ~To-Do~
 
-Main thing: Figure out what to do ._.
+Main thing: Begin by making sure the board can carry out a turn properly
 
 Issues to fix:
-- Nothing yay
+- Nothing yet
 
 Next steps:
-- Do what I figured out to do
+- Edit the iterate turn function and make sure it does legit math and doesn't skip banks
 
-Why do I feel like I do and don't know what I'm doing
+On to something!
