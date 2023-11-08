@@ -1,10 +1,10 @@
-#pragma once
-
 //Preprocessor Directives
 #include <iostream>
 
 //This class should run all of the game mechanisms...
 
+#ifndef BOARD_H
+#define BOARD_H
 class Board {
 	public:
 		Board();
@@ -19,3 +19,4 @@ class Board {
 		int bank1, bank2;
 		int stones;
 };
+#endif
