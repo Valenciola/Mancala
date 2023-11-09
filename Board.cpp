@@ -68,7 +68,12 @@ int Board::TakeTurn(int player, int board[], int mode) {
 		}
 
 		//Iteration
-		position = choice - 1;
+		if (player == 1) {
+			position = choice - 1;
+		}
+		else {
+			position = 6 + (choice - 1);
+		}
 		stones = board[position];
 		board[position] = 0;
 		position++;
@@ -78,11 +83,11 @@ int Board::TakeTurn(int player, int board[], int mode) {
 				//Player 1 bank
 				bank1 = bank1++;
 				stones--;
-				position = 6;
+				position = 7;
 			}
 			else if (position == 6 && player == 2) {
 				//Passing player 1 bank
-				position = 6;
+				position = 7;
 			}
 			else if (position == 12 && player == 2) {
 				//Player 2 bank
@@ -95,7 +100,7 @@ int Board::TakeTurn(int player, int board[], int mode) {
 				position = 0;
 			}
 			else {
-				board[position]++;
+				board[position-1]++;
 				stones--;
 				position++;
 			}
