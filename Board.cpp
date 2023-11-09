@@ -44,9 +44,69 @@ int Board::StartGame(int mode) {
 int Board::Failsafe(int inprogress, int board[], int p1bank, int p2bank) {
 	//Checks if game is okay by running failsafes
 }
-void Board::TakeTurn(int player, int board[]) {
-	//Iterates through a turn
+*/
+
+int Board::TakeTurn(int player, int board[], int mode) {
+	//Iterates through a turn, returns 1 for an extra turn and 0 for regular progression
+	int choice, stones, position;
+
+	//Checking for correct stone input
+	if (mode == 1) {
+		cout << "It's player " << player << "'s turn! Pick the hole you want to take stones from.";
+		cin >> choice;
+		if (isdigit(choice) == 0) {
+			do {
+				cout << "Invalid choice. Please enter a valid hole number (1-6)";
+				cin >> choice;
+			} while (isdigit(choice) == 0);
+		}
+		if (board[choice - 1] == 0) {
+			do {
+				cout << "This hole is empty! Pick a hole that has at least one stone in it.";
+				cin >> choice;
+			} while (board[choice - 1] == 0);
+		}
+
+		//Iteration
+		position = choice - 1;
+		stones = board[position];
+		board[position] = 0;
+		while (stones != 0) {
+			if (position == 6 && player == 1) {
+				//Player 1 bank
+				bank1 = bank1++;
+				stones--;
+				position = 6;
+			}
+			else if (position == 6 && player == 2) {
+				//Passing player 1 bank
+				position = 6;
+			}
+			else if (position == 12 && player == 2) {
+				//Player 2 bank
+				bank2 = bank2++;
+				stones--;
+				position = 0;
+			}
+			else if (position == 12 && player == 1) {
+				//Passing player 2 bank
+				position = 0;
+			}
+			else {
+				board[position]++;
+				stones--;
+				position++;
+			}
+		}
+		return 0;
+	}
+	else {
+		cout << "It's the computer's turn but there is no computer yet.";
+		exit(1);
+	}
 }
+
+/*
 int Board::DecideWinner() {
 	//Decides on a winner and works in StartGame to check if the game is over
 }

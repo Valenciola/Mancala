@@ -10,7 +10,9 @@ using namespace std;
 #include "Experience.h"
 
 int main() {
+	int player = 1;
 	Board mancala;
 	mancala.DisplayTable();
+	mancala.TakeTurn(player, mancala.cells, 1);
 	return 0;
 }
