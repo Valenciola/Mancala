@@ -52,17 +52,17 @@ int Board::TakeTurn(int player, int board[], int mode) {
 
 	//Checking for correct stone input
 	if (mode == 1) {
-		cout << "It's player " << player << "'s turn! Pick the hole you want to take stones from.";
+		cout << "It's player " << player << "'s turn! Pick the hole you want to take stones from.: ";
 		cin >> choice;
-		if (isdigit(choice) == 0) {
+		if (!(choice < 7 && choice > 0)) {
 			do {
-				cout << "Invalid choice. Please enter a valid hole number (1-6)";
+				cout << "Invalid choice. Please enter a valid hole number (1-6): ";
 				cin >> choice;
-			} while (isdigit(choice) == 0);
+			} while (!(choice < 7 && choice > 0));
 		}
 		if (board[choice - 1] == 0) {
 			do {
-				cout << "This hole is empty! Pick a hole that has at least one stone in it.";
+				cout << "This hole is empty! Pick a hole that has at least one stone in it.: ";
 				cin >> choice;
 			} while (board[choice - 1] == 0);
 		}
@@ -71,6 +71,8 @@ int Board::TakeTurn(int player, int board[], int mode) {
 		position = choice - 1;
 		stones = board[position];
 		board[position] = 0;
+		position++;
+		cout << "\n\nWe picked up " << stones << " stone(s)." << endl;
 		while (stones != 0) {
 			if (position == 6 && player == 1) {
 				//Player 1 bank
@@ -97,6 +99,7 @@ int Board::TakeTurn(int player, int board[], int mode) {
 				stones--;
 				position++;
 			}
+			cout << "Stone count is now " << stones << "." << endl;
 		}
 		return 0;
 	}
