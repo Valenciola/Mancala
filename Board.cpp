@@ -51,7 +51,7 @@ int Board::TakeTurn(int player, int board[], int mode) {
 	int choice, stones, position;
 
 	//Checking for correct stone input
-	if (player == 1) {
+	if (player == 1 || player == 2) {
 		cout << "It's player " << player << "'s turn! Pick the hole you want to take stones from.: ";
 		cin >> choice;
 		if (!(choice < 7 && choice > 0)) {
@@ -135,7 +135,7 @@ void Board::DisplayTable() {
 	cout << "Player 1's bank contains " << bank1 << " stone(s)." << endl;
 	cout << "Player 2's bank contains " << bank2 << " stone(s)." << endl;
 	for (int i = 0; i < 12; i++) {
-		cout << "Hole " << i + 1 << ", a.k.a position " << i << " has " << cells[i] << " stones(s) in it." << endl;
+		cout << "Hole " << i + 1 << " has " << cells[i] << " stones(s) in it." << endl;
 	}
 	return;
 }
