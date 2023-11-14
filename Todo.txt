@@ -1,11 +1,11 @@
 ~To-Do~
 
-Main thing: Begin by making sure the board can carry out a turn properly
+Main thing: The board function works! Now I just need it to make it work as a CPU...
 
 Issues to fix:
-- Nothing yet
+- Nothing yet thankfully
 
 Next steps:
-- Edit the iterate turn function and make sure it does legit math and doesn't skip banks
+- Make CPU stuff
 
-On to something!
+This is definitely gonna be inconsistent-
