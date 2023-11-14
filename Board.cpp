@@ -60,11 +60,17 @@ int Board::TakeTurn(int player, int board[], int mode) {
 				cin >> choice;
 			} while (!(choice < 7 && choice > 0));
 		}
+		if (player == 2) {
+			choice = choice + 6;
+		}
 		if (board[choice - 1] == 0) {
 			do {
 				cout << "This hole is empty! Pick a hole that has at least one stone in it.: ";
 				cin >> choice;
 			} while (board[choice - 1] == 0);
+		}
+		if (player == 2) {
+			choice = choice - 6;
 		}
 
 		//Iteration
