@@ -1,17 +1,17 @@
 ~Things to Do~
 
 Game
-- Create an array for the board
-- Create two variables for the banks
-- Create a randomized turn system and a variable to note the turn
+- Create an array for the board (done)
+- Create two variables for the banks (done)
+- Create a randomized turn system and a variable to note the turn (needs randomizer)
 - Figure out how I'm going to make anything that LOOKS like a mancala board in the terminal
 
 Mechanisms
-- Create a function that will iterate through the stones in each cell
+- Create a function that will iterate through the stones in each cell (done)
 - Create an initialization function to empty each bank and fill each cell with four stones
 - SirSafety should check if any one side is empty and decide to end the game if that's true
 - Function to compare totals in the banks and decide a winner
-- Make sure the stone skips the bank that doesn't belong to the player (maybe part of the iteration function)
+- Make sure the stone skips the bank that doesn't belong to the player (maybe part of the iteration function) (attempted, not tested)
 
 CPU
 - A variable to track difficulty level
@@ -25,7 +25,7 @@ Failsafes
 - Makes sure the program doesn't run any illegal moves (a.k.a DON'T EVEN TRY IT)
 
 Else
-- Compute data on separate lines before making the terminal picture
+- Compute data on separate lines before making the terminal picture (done and working)
 - Do math when testing the CPU; should choose the move that gives the most stones
 
 Extra (for the future?)
