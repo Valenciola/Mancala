@@ -136,8 +136,18 @@ int Board::DecideWinner() {
 }
 */
 
-void Board::DisplayTable() {
+void Board::DisplayTable(int player) {
 	//Displays the board
+	if (player == 1) {
+		cout << "View for player " << player << " starts in holes 1-6" << endl;
+	}
+	else if (player == 2) {
+		cout << "View for player " << player << " starts in holes 7-12" << endl;
+	}
+	else {
+		cout << "Something's not right here." << endl;
+		exit(1);
+	}
 	cout << "Player 1's bank contains " << bank1 << " stone(s)." << endl;
 	cout << "Player 2's bank contains " << bank2 << " stone(s)." << endl;
 	for (int i = 0; i < 12; i++) {

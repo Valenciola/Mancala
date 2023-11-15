@@ -13,7 +13,7 @@ class Board {
 		int Failsafe(int inprogress, int board[], int p1bank, int p2bank); //Checks if game is okay by running failsafes
 		int TakeTurn(int player, int board[], int mode); //Iterates through a turn
 		int DecideWinner(); //Decides on a winner and works in StartGame to check if the game is over
-		void DisplayTable(); //Displays stuff
+		void DisplayTable(int player); //Displays stuff
 
 		int cells[12];
 	private:

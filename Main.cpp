@@ -12,14 +12,13 @@ using namespace std;
 int main() {
 	int player = 1;
 	Board mancala;
-	mancala.DisplayTable();
+	mancala.DisplayTable(player);
 	mancala.TakeTurn(player, mancala.cells, 1);
-	mancala.DisplayTable();
+	mancala.DisplayTable(player);
 
 	player = 2;
 	cout << endl;
-	mancala.DisplayTable();
 	mancala.TakeTurn(player, mancala.cells, 1);
-	mancala.DisplayTable();
+	mancala.DisplayTable(player);
 	return 0;
 }
