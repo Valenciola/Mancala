@@ -10,7 +10,6 @@ using namespace std;
 #define EXPERIENCE_H
 class Experience: public Board {
 	public:
-		void DisplayTable(int fills[], int firstbank, int secondbank); //Displays the board
 		void OperateMenu(); //Displays the starting menu
 	private:
 };
