@@ -7,7 +7,7 @@
 #define COMPLAYER_H
 class Computer {
 public:
-	int FindBestMove(int board[], int firstbank, int secondbank); //Finds and returns the best move
+	int FindBestMove(int board[], int secondbank); //Finds and returns the best move
 private:
 };
 #endif
