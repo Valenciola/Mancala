@@ -1,5 +1,8 @@
 //Preprocessor Directives
 #include <iostream>
+using namespace std;
+
+#include "Complayer.h"
 
 //This class should run all of the game mechanisms...
 
@@ -14,7 +17,7 @@ class Board {
 		int TakeTurn(int player, int board[], int mode); //Iterates through a turn
 		int DecideWinner(); //Decides on a winner and works in StartGame to check if the game is over
 		void DisplayTable(int player); //Displays stuff
-
+		Computer CPU;
 		int cells[12];
 	private:
 		int bank1, bank2;
