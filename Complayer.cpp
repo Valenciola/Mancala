@@ -19,12 +19,13 @@ int Computer::FindBestMove(int board[], int secondbank) {
 
 			for (int j = 0; j < 12; j++) {
 				//Board reset
-				fakeboard[i] = board[i];
+				fakeboard[j] = board[j];
 			}
 
-			stones = fakeboard[i];
+			stones = fakeboard[i + 6];
 			spot = i + 6;
-			fakeboard[i] = 0;
+			fakeboard[i + 6] = 0;
+			cout << "Picking up " << stones << " stone(s)." << endl;
 
 			while (stones != 0) {
 				if (spot == 12) {
@@ -42,16 +43,19 @@ int Computer::FindBestMove(int board[], int secondbank) {
 				}
 			}
 
+			cout << bankadd << " stones will be added when taking from hole " << i + 7 << "." << endl;
 			outcomes[i] = bankadd;
-			move = 0;
-			for (int g = 0; g < 6; g++) {
-				if (outcomes[g] > move) {
-					move = outcomes[g];
-				}
-				else {
-					//Do nothing.
-				}
+			bankadd = 0;
 			}
+		}
+
+	move = 0;
+	for (int g = 0; g < 6; g++) {
+		if (outcomes[g] > move) {
+			move = outcomes[g];
+		}
+		else {
+			//Do nothing.
 		}
 	}
 
